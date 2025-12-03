@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvfeyaqc6nbqv"]
+
+[ext_resource type="Script" uid="uid://bxiyiomojng08" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://bdhulnjihwy7d" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://ch2s2uyj68hp1" path="res://assets/Sprites/Backgrounds/Default/background_solid_sky.png" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dutdskt1pd4mj" path="res://scenes/grass_block_top.tscn" id="4_tefeu"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_o5qli")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background"]
+position = Vector2(128, 384)
+texture = ExtResource("2_jyhfs")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_jyhfs")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_jyhfs")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_jyhfs")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_jyhfs")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background"]
+position = Vector2(128, 128)
+texture = ExtResource("3_tbgi4")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_tbgi4")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_tbgi4")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_tbgi4")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_tbgi4")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="grass_block_top" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(32, 536)
+
+[node name="grass_block_top2" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(544, 536)
+
+[node name="grass_block_top3" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(480, 536)
+
+[node name="grass_block_top4" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(416, 536)
+
+[node name="grass_block_top5" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(352, 536)
+
+[node name="grass_block_top6" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(288, 536)
+
+[node name="grass_block_top7" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(224, 536)
+
+[node name="grass_block_top8" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(160, 536)
+
+[node name="grass_block_top9" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(96, 536)
+
+[node name="grass_block_top10" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(800, 536)
+
+[node name="grass_block_top11" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(736, 536)
+
+[node name="grass_block_top12" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(672, 536)
+
+[node name="grass_block_top13" parent="Ground" instance=ExtResource("4_tefeu")]
+position = Vector2(608, 536)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dutdskt1pd4mj"]
+
+[ext_resource type="Texture2D" uid="uid://dn41y534j38je" path="res://assets/Sprites/Tiles/Default/terrain_grass_block_top.png" id="1_yatit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k116c"]
+size = Vector2(64, 61)
+
+[node name="grass_block_top" type="StaticBody2D"]
+
+[node name="grass_block_top_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_yatit")
+
+[node name="BlockShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_k116c")
