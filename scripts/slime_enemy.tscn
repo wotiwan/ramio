@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwsl1y60rs12"]
+
+[ext_resource type="Script" uid="uid://dt28aoi4k52b3" path="res://scenes/slime_enemy.gd" id="1_8lx73"]
+[ext_resource type="Texture2D" uid="uid://cfis0ehssnw6o" path="res://assets/Sprites/Enemies/Default/slime_normal_walk_a.png" id="1_ukp0r"]
+
+[sub_resource type="Animation" id="Animation_057e2"]
+resource_name = "break"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 28)]
+}
+
+[sub_resource type="Animation" id="Animation_30a25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30a25"]
+_data = {
+&"RESET": SubResource("Animation_30a25"),
+&"break": SubResource("Animation_057e2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ukp0r"]
+radius = 17.0
+height = 46.0
+
+[node name="slime_enemy" type="CharacterBody2D"]
+script = ExtResource("1_8lx73")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ukp0r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_30a25")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ukp0r")

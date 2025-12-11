@@ -10,7 +10,8 @@ const SPRINT_SPEED = 550.0
 const JUMP_VELOCITY = -700.0
 const GRAVITY = 1000.0
 
-var player_hp = 3
+const MAX_PLAYER_HP = 5
+var player_hp = 5
 
 var is_stunned: bool = false
 var stun_delay: float = 0.0
@@ -23,6 +24,7 @@ const camera_offset = 50.0
 
 @onready var animation = get_node("AnimationPlayer")
 @onready var sprite = get_node("PlayerSprite")
+@onready var canvas = get_node("Camera2D/CanvasLayer")
 
 var is_double_jump: bool = false
 
@@ -42,6 +44,15 @@ func handle_collisions(delta: float):
 			player_hp -= 1
 			print("Мы получили дамагу")
 		
+		if "slime" in collider.name:
+			if abs(normal.x) > 0.8:
+				horizontal_bounce(true)
+				player_hp -= 1
+				print("Мы получили дамагу")
+			if abs(normal.y) > 0.8:
+				vertical_bounce()
+				animate_block(collider, true)
+				
 		if "Yellow" in collider.name:
 			if normal.y > 0.8:
 				static_collision.emit(collider)
@@ -52,8 +63,7 @@ func handle_collisions(delta: float):
 
 func _physics_process(delta: float) -> void:
 	
-	if player_hp <= 0:
-		loose_signal.emit()
+	handle_hp()
 	
 	clamp_to_camera(delta)
 	
@@ -138,3 +148,30 @@ func horizontal_bounce(short_bounce: bool):
 
 func vertical_bounce():
 	velocity.y = JUMP_VELOCITY
+
+
+func animate_block(collider, to_destroy: bool):
+	collider.get_child(1).play("break")  # Обращаемся к анимейшн плееру
+	if to_destroy:
+		collider.get_child(2).disabled = true  # Обращаемся к колижен шейп
+		await collider.get_child(1).animation_finished
+		collider.queue_free()
+		
+
+func handle_hp():
+	if player_hp <= 0:
+		loose_signal.emit()
+	
+	if player_hp == 1:
+		canvas.get_child(0).get_child(0).visible = false ## Меняем вид сердечка
+		canvas.get_child(0).get_child(1).visible = true ## Меняем вид сердечка
+		animation.play("low_hp")
+	elif player_hp > 1:
+		canvas.get_child(0).get_child(0).visible = true
+	
+	for i in range(1, MAX_PLAYER_HP + 1):
+		if i == player_hp:
+			canvas.get_child(i).visible = true
+		else:
+			canvas.get_child(i).visible = false
+	
