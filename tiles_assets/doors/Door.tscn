@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjblbgua7oaat"]
+
+[ext_resource type="Texture2D" uid="uid://bqxfm4l6qtsk7" path="res://assets/Sprites/Tiles/Default/door_closed_top.png" id="1_7yue0"]
+[ext_resource type="Texture2D" uid="uid://bv8a51tp0w6wn" path="res://assets/Sprites/Tiles/Default/door_open_top.png" id="2_m3n0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yue0"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3n0g"]
+size = Vector2(24, 128)
+
+[node name="Door" type="StaticBody2D"]
+
+[node name="DoorClosed" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+scale = Vector2(2, 2)
+texture = ExtResource("1_7yue0")
+
+[node name="DoorOpened" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -64)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m3n0g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_7yue0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(44, -64)
+shape = SubResource("RectangleShape2D_m3n0g")

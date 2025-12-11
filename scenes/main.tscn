@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cvfeyaqc6nbqv"]
+[gd_scene load_steps=22 format=3 uid="uid://cvfeyaqc6nbqv"]
 
 [ext_resource type="Script" uid="uid://bxiyiomojng08" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bdhulnjihwy7d" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="2_jyhfs"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://mbcfryqfr4t8" path="res://tiles_assets/blocks/grass7.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cjfoqnysc11w8" path="res://tiles_assets/blocks/grass5.tscn" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://cbo0ayjo4u4t8" path="res://tiles_assets/blocks/grass13.tscn" id="17_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://cjblbgua7oaat" path="res://tiles_assets/doors/Door.tscn" id="18_dp3eg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
 size = Vector2(30, 768)
@@ -24,11 +25,15 @@ size = Vector2(30, 768)
 [sub_resource type="CircleShape2D" id="CircleShape2D_muem4"]
 radius = 98.95454
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp3eg"]
+radius = 24.0
+
 [node name="main" type="Node2D"]
 position = Vector2(16, 24)
 script = ExtResource("1_o5qli")
 
 [node name="Background" type="Node2D" parent="."]
+z_index = -2
 
 [node name="BackgroundClouds" type="Sprite2D" parent="Background"]
 position = Vector2(128, 384)
@@ -601,7 +606,7 @@ position = Vector2(320, 280)
 position = Vector2(192, 232)
 
 [node name="ZamokRed" parent="Static" instance=ExtResource("14_jkv2x")]
-position = Vector2(1040, 472)
+position = Vector2(856, 104)
 
 [node name="Area2D" type="Area2D" parent="Static/ZamokRed"]
 
@@ -618,6 +623,25 @@ position = Vector2(128, 280)
 position = Vector2(256, 280)
 
 [node name="KeyRed2" parent="Static" instance=ExtResource("13_a8y0u")]
-position = Vector2(1024, 472)
+position = Vector2(840, 104)
+
+[node name="Grass8" parent="Static" instance=ExtResource("15_jkv2x")]
+position = Vector2(920, 162)
+
+[node name="Grass14" parent="Static" instance=ExtResource("17_dp3eg")]
+position = Vector2(856, 162)
+
+[node name="Grass6" parent="Static" instance=ExtResource("16_muem4")]
+position = Vector2(792, 162)
+
+[node name="Door" parent="Static" instance=ExtResource("18_dp3eg")]
+position = Vector2(1448, 504)
+
+[node name="winArea" type="Area2D" parent="Static/Door"]
+
+[node name="winConditionArea" type="CollisionShape2D" parent="Static/Door/winArea"]
+position = Vector2(8, -40)
+shape = SubResource("CircleShape2D_dp3eg")
 
 [connection signal="body_entered" from="Static/ZamokRed/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Static/Door/winArea" to="." method="_on_win_area_body_entered"]

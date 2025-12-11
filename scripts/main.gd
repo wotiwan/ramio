@@ -12,6 +12,8 @@ var red_key_collected: bool = false
 @onready var red_lock = $Static/ZamokRed
 var red_lock_unlocked: bool = false
 
+@onready var door = $Static/Door
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -61,5 +63,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if red_key_collected and !red_lock_unlocked:
 			animate_key_entered(red_key2)
 			red_lock_unlocked = true
+			door.get_child(0).visible = false
+			door.get_child(3).set_deferred("disabled", true)
+			
+			
 		else:
 			print("Сначала найди ключ, дебил!")
+
+
+func _on_win_area_body_entered(body: Node2D) -> void:
+	if "Player" in body.name:
+		win_menu.set_active()
