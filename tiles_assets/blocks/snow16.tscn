@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfirmhquf8msn"]
+
+[ext_resource type="Texture2D" uid="uid://dmn5evy4kkw5g" path="res://assets/Sprites/Tiles/Default/terrain_snow_vertical_top.png" id="1_alvqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aya6p"]
+size = Vector2(61, 63)
+
+[node name="Snow16" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_alvqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_aya6p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://rhra0od3m1nd"]
+
+[ext_resource type="Texture2D" uid="uid://b0t22qbivnr7k" path="res://assets/Sprites/Tiles/Default/terrain_stone_ramp_short_b.png" id="1_cnvvl"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4y8kb"]
+a = Vector2(-32, 31)
+b = Vector2(30, 31)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_no6l4"]
+a = Vector2(-31, -31)
+b = Vector2(-31, 31)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ssr3h"]
+a = Vector2(-31, -30)
+b = Vector2(30, 31)
+
+[node name="Iron15" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cnvvl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_4y8kb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_no6l4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_ssr3h")

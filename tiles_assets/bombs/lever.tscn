@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjo81ekxmjcbp"]
+
+[ext_resource type="Texture2D" uid="uid://bdcuwejuufwfp" path="res://assets/Sprites/Tiles/Default/lever.png" id="1_0xkkw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cku1s"]
+height = 52.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nxdff"]
+radius = 9.0
+height = 42.0
+
+[node name="Lever" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0xkkw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_cku1s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nxdff")

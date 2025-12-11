@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://yj8je8e1mgar"]
+
+[ext_resource type="Texture2D" uid="uid://deotloa7idg4d" path="res://assets/Sprites/Tiles/Double/terrain_snow_block_right.png" id="1_7gyel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oymdr"]
+size = Vector2(127, 128)
+
+[node name="Snow6" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7gyel")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_oymdr")

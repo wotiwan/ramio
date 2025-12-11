@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmvx8yfos6a1o"]
+
+[ext_resource type="Texture2D" uid="uid://b4piugi75wejy" path="res://assets/Sprites/Tiles/Default/flag_yellow_b.png" id="1_e3hln"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3qww5"]
+radius = 28.991379
+height = 74.95332
+
+[node name="YellowFlag2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e3hln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 2)
+rotation = -2.3561945
+shape = SubResource("CapsuleShape2D_3qww5")

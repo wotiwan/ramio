@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpwtn770qxre3"]
+
+[ext_resource type="Texture2D" uid="uid://d38wx40qvbi7m" path="res://assets/Sprites/Tiles/Default/terrain_snow_cloud_background.png" id="1_0wc2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rje5"]
+size = Vector2(64, 65)
+
+[node name="Snow22" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0wc2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5rje5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

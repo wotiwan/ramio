@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnr1n0oqed756"]
+
+[ext_resource type="Texture2D" uid="uid://cjmbtadv0x7hw" path="res://assets/Sprites/Tiles/Default/block_red.png" id="1_idd7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vsio"]
+size = Vector2(62, 62)
+
+[node name="blockred" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_idd7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7vsio")

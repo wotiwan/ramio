@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvptf5i56p3sq"]
+
+[ext_resource type="Texture2D" uid="uid://b8ecbfpgs0gd1" path="res://assets/Sprites/Tiles/Default/key_yellow.png" id="1_ucda6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ts7tn"]
+radius = 13.152817
+height = 41.974415
+
+[node name="KeyYellow" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ucda6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2)
+rotation = -1.4137167
+shape = SubResource("CapsuleShape2D_ts7tn")

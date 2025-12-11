@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://8ebn1jrjk2ol"]
+
+[ext_resource type="Texture2D" uid="uid://c0n4adfyyge8e" path="res://assets/Sprites/Tiles/Default/terrain_snow_horizontal_overhang_left.png" id="1_f1ngq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3skx"]
+size = Vector2(62, 37)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nlhf5"]
+b = Vector2(0, 25)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tnh5t"]
+a = Vector2(-8.935152, -24.41645)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mrm3t"]
+a = Vector2(-24, -11)
+b = Vector2(-12, 3)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x3ctq"]
+a = Vector2(-18, 19)
+b = Vector2(-3, 27)
+
+[node name="Snow27" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f1ngq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -11.5)
+shape = SubResource("RectangleShape2D_y3skx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(31, 7)
+shape = SubResource("SegmentShape2D_nlhf5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(22, 27)
+rotation = -1.2199851
+shape = SubResource("SegmentShape2D_tnh5t")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 17)
+shape = SubResource("SegmentShape2D_mrm3t")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_x3ctq")

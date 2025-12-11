@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://mbcfryqfr4t8"]
+
+[ext_resource type="Texture2D" uid="uid://mwroihw13dw2" path="res://assets/Sprites/Tiles/Default/terrain_grass_cloud_right.png" id="1_40dx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7dh8"]
+size = Vector2(62, 46)
+
+[node name="Grass7" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_40dx6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -7)
+shape = SubResource("RectangleShape2D_f7dh8")

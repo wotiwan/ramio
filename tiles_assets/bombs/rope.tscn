@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cikf38784pv3i"]
+
+[ext_resource type="Texture2D" uid="uid://0m2f70ptwd3h" path="res://assets/Sprites/Tiles/Default/rope.png" id="1_yrk1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8si60"]
+size = Vector2(16, 64)
+
+[node name="Rope" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yrk1w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8si60")

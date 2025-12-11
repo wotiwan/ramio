@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg4wuq77ww7lt"]
+
+[ext_resource type="Texture2D" uid="uid://bhblmbt7sx1in" path="res://assets/Sprites/Tiles/Default/terrain_stone_cloud_middle.png" id="1_jq78o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4rk"]
+size = Vector2(65, 52)
+
+[node name="Iron13" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jq78o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_fs4rk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

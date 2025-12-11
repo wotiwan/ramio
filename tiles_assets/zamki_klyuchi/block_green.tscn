@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://k45j0v1lxc6q"]
+
+[node name="BlockGreen" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

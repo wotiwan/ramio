@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://sqbvoltvtopm"]
+
+[ext_resource type="Texture2D" uid="uid://bx13kvrgp8x2d" path="res://assets/Sprites/Tiles/Default/terrain_stone_vertical_bottom.png" id="1_6qinf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23a2o"]
+size = Vector2(61, 63)
+
+[node name="Iron20" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6qinf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_23a2o")

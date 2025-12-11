@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c18yyrbuscqmr"]
+
+[ext_resource type="Texture2D" uid="uid://boixclsskjotr" path="res://assets/Sprites/Tiles/Default/lever_right.png" id="1_rscns"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ii3vn"]
+height = 47.589836
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_invko"]
+height = 37.994213
+
+[node name="LeverRight" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rscns")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 3.9999998)
+rotation = 0.5061455
+shape = SubResource("CapsuleShape2D_ii3vn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D"]
+position = Vector2(-0.019624025, 20.591251)
+rotation = 1.0821041
+shape = SubResource("CapsuleShape2D_invko")

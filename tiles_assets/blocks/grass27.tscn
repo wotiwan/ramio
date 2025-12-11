@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcmoxpmowg0di"]
+
+[ext_resource type="Texture2D" uid="uid://dvktijtpda7jo" path="res://assets/Sprites/Tiles/Default/terrain_grass_horizontal_overhang_left.png" id="1_ny6aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jln6y"]
+size = Vector2(63, 39)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y1c54"]
+b = Vector2(0, 23)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ej175"]
+a = Vector2(6, 30)
+b = Vector2(31, 31)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lanrw"]
+a = Vector2(-25, 20)
+b = Vector2(-2, 29)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hf5d3"]
+a = Vector2(-13, -6)
+
+[node name="Grass27" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ny6aj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -11.5)
+shape = SubResource("RectangleShape2D_jln6y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(31, 8)
+shape = SubResource("SegmentShape2D_y1c54")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_ej175")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(9, 1)
+shape = SubResource("SegmentShape2D_lanrw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 12)
+shape = SubResource("SegmentShape2D_hf5d3")

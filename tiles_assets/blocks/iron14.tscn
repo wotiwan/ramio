@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://df2dw4kpju4k8"]
+
+[ext_resource type="Texture2D" uid="uid://c2lb0kun6gc08" path="res://assets/Sprites/Tiles/Default/terrain_stone_ramp_short_a.png" id="1_qf7xw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22ap2"]
+size = Vector2(65, 64)
+
+[node name="Iron14" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qf7xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_22ap2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

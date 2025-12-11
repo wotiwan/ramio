@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5uecqtybtsh5"]
+
+[ext_resource type="Texture2D" uid="uid://cja3jtaaja6vm" path="res://assets/Sprites/Tiles/Default/terrain_grass_block_bottom.png" id="1_05dlm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4rs"]
+size = Vector2(64, 64)
+
+[node name="Grass11" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_05dlm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lu4rs")

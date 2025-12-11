@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5mmwc3sma1xe"]
+
+[ext_resource type="Texture2D" uid="uid://dg4yuho8jpy8t" path="res://assets/Sprites/Tiles/Default/terrain_stone_horizontal_overhang_right.png" id="1_am74w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4rgv"]
+size = Vector2(62, 41)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bb1y6"]
+b = Vector2(0, 22)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f4426"]
+a = Vector2(4, 27)
+b = Vector2(-30, 30)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ul084"]
+a = Vector2(28, 9)
+b = Vector2(3, 28)
+
+[node name="Iron2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_am74w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -10.5)
+shape = SubResource("RectangleShape2D_r4rgv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-31, 10)
+shape = SubResource("SegmentShape2D_bb1y6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_f4426")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_ul084")

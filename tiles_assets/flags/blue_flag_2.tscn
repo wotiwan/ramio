@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2qa7xhxphw7d"]
+
+[ext_resource type="Texture2D" uid="uid://ctcjwdjafjy0u" path="res://assets/Sprites/Tiles/Default/flag_blue_b.png" id="1_86si5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7suc4"]
+radius = 29.99477
+height = 76.7418
+
+[node name="BlueFlag2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_86si5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 1)
+rotation = -2.195624
+shape = SubResource("CapsuleShape2D_7suc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]

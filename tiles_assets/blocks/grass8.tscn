@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://0bmoblufgnpg"]
+
+[ext_resource type="Texture2D" uid="uid://d0ch8t818c3qn" path="res://assets/Sprites/Tiles/Default/terrain_grass_ramp_long_a.png" id="1_nx7km"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7s6u"]
+size = Vector2(64, 33)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ntau6"]
+a = Vector2(0, -21)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tpig2"]
+a = Vector2(-31, -31)
+b = Vector2(29, 0)
+
+[node name="Grass8" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nx7km")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_h7s6u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-31, -11)
+shape = SubResource("SegmentShape2D_ntau6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_tpig2")

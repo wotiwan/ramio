@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckxnr0ckiko61"]
+
+[ext_resource type="Texture2D" uid="uid://ta7v1olr1fh8" path="res://assets/Sprites/Tiles/Default/block_spikes.png" id="1_2m6b3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiwpv"]
+size = Vector2(56.5, 56.5)
+
+[node name="Spikes" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2m6b3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -0.25)
+shape = SubResource("RectangleShape2D_qiwpv")

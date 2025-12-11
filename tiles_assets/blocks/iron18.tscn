@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvw12uhjsg0pn"]
+
+[ext_resource type="Texture2D" uid="uid://bw0x7t1ynn28q" path="res://assets/Sprites/Tiles/Default/terrain_stone_block_top_right.png" id="1_lnpdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amkoo"]
+size = Vector2(63, 64)
+
+[node name="Iron18" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lnpdt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_amkoo")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://yjousrg7yeq2"]
+
+[ext_resource type="Texture2D" uid="uid://c4gciki0hai2a" path="res://assets/Sprites/Tiles/Default/flag_red_a.png" id="1_2vvl8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8bugg"]
+radius = 30.010277
+height = 72.46325
+
+[node name="RedFlag1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2vvl8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+rotation = -2.5621433
+shape = SubResource("CapsuleShape2D_8bugg")

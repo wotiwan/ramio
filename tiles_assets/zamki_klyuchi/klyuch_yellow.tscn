@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3bo3ouuk7r8r"]
+
+[ext_resource type="Texture2D" uid="uid://b8ecbfpgs0gd1" path="res://assets/Sprites/Tiles/Default/key_yellow.png" id="1_wjgkk"]
+
+[node name="KlyuchYellow" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wjgkk")

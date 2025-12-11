@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bskq71dvrp337"]
+
+[ext_resource type="Texture2D" uid="uid://bv8a51tp0w6wn" path="res://assets/Sprites/Tiles/Default/door_open_top.png" id="1_b5yns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km388"]
+size = Vector2(63, 36)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abs35"]
+radius = 32.0
+height = 64.0
+
+[node name="BlackDoor2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b5yns")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 14)
+shape = SubResource("RectangleShape2D_km388")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_abs35")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4e4u11oedncw"]
+
+[ext_resource type="Texture2D" uid="uid://qm1jsfhscl2k" path="res://assets/Sprites/Tiles/Default/flag_green_b.png" id="1_y11pp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g31tp"]
+radius = 33.822086
+height = 75.282135
+
+[node name="GreenFlag2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y11pp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.9999998, 2)
+rotation = -2.4399703
+shape = SubResource("CapsuleShape2D_g31tp")

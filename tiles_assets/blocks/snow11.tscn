@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctks5jsxee8s8"]
+
+[ext_resource type="Texture2D" uid="uid://c8bqxa1h325l0" path="res://assets/Sprites/Tiles/Default/terrain_snow_block_bottom.png" id="1_pkerc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mpe0"]
+size = Vector2(64, 64)
+
+[node name="Snow11" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pkerc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5mpe0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

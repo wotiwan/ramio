@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbwcu17anab8j"]
+
+[ext_resource type="Texture2D" uid="uid://bhm3jv1cydbb" path="res://assets/Sprites/Tiles/Double/terrain_snow_ramp_long_b.png" id="1_pp1wp"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xspq8"]
+a = Vector2(-63, 1)
+b = Vector2(-63, 63)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0d4hx"]
+a = Vector2(-64, 2)
+b = Vector2(61, 63)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jgvvs"]
+a = Vector2(58, 62)
+b = Vector2(-63, 63)
+
+[node name="Snow9" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pp1wp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_xspq8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_0d4hx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_jgvvs")

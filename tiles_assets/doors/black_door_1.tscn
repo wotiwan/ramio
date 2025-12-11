@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv0ortliylet4"]
+
+[ext_resource type="Texture2D" uid="uid://chxatg7jub2wl" path="res://assets/Sprites/Tiles/Default/door_open.png" id="1_xgyvx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q235o"]
+size = Vector2(64, 64)
+
+[node name="BlackDoor1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xgyvx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q235o")

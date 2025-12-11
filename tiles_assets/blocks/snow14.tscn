@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwm56so7li6rb"]
+
+[ext_resource type="Texture2D" uid="uid://5c3s4hc3fetw" path="res://assets/Sprites/Tiles/Default/terrain_snow_ramp_short_a.png" id="1_oa1x7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcsqu"]
+size = Vector2(64, 64)
+
+[node name="Snow14" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oa1x7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bcsqu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

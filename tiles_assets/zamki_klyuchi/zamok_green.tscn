@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulvxn7ld577k"]
+
+[ext_resource type="Texture2D" uid="uid://8ftyn1wpad6p" path="res://assets/Sprites/Tiles/Default/lock_green.png" id="1_kjbox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ws4u"]
+size = Vector2(62, 62)
+
+[node name="ZamokGreen" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kjbox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ws4u")

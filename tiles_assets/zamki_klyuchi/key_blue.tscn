@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnku7nbwhe47d"]
+
+[ext_resource type="Texture2D" uid="uid://3fc32l3vu5mn" path="res://assets/Sprites/Tiles/Default/key_blue.png" id="1_yurt0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ay7mh"]
+radius = 13.032656
+height = 44.175922
+
+[node name="KeyBlue" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yurt0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.99999994, 1.9999999)
+rotation = -1.4643313
+shape = SubResource("CapsuleShape2D_ay7mh")
