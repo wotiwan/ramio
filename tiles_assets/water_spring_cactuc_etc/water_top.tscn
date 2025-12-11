@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce1vw6p7sgcfs"]
+
+[ext_resource type="Texture2D" uid="uid://ddkbb2olsu664" path="res://assets/Sprites/Tiles/Default/water_top.png" id="1_kisul"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv7bi"]
+size = Vector2(64, 56)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57cog"]
+height = 32.0
+
+[node name="WaterTop" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kisul")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_jv7bi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(16, -22)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57cog")

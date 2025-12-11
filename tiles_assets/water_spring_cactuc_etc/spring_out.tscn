@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dni4ptel58ast"]
+
+[ext_resource type="Texture2D" uid="uid://xhgiqx8unrox" path="res://assets/Sprites/Tiles/Default/spring_out.png" id="1_rbkpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lulls"]
+size = Vector2(44, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlwq5"]
+size = Vector2(60, 29)
+
+[node name="SpringOut" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rbkpy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_lulls")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_nlwq5")

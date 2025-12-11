@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c462u61k6bhxo"]
+
+[ext_resource type="Texture2D" uid="uid://sxgj0p5ke6kx" path="res://assets/Sprites/Tiles/Default/bush.png" id="1_6hk72"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7em65"]
+radius = 19.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cv8dd"]
+radius = 11.0
+height = 64.0
+
+[node name="Bush" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6hk72")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 13)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7em65")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 21)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cv8dd")

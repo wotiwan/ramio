@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0lrnu20bpmk8"]
+
+[ext_resource type="Texture2D" uid="uid://borpkqgypxfvb" path="res://assets/Sprites/Enemies/Default/slime_spike_flat.png" id="1_vetue"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1l7rp"]
+radius = 8.0
+height = 54.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dnhtj"]
+b = Vector2(-15, 22)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5cxaf"]
+a = Vector2(0, -3)
+b = Vector2(17, 20)
+
+[node name="Slime1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vetue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 23)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1l7rp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("SegmentShape2D_dnhtj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_5cxaf")

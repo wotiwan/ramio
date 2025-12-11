@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://q7toeneueys7"]
+
+[ext_resource type="Texture2D" uid="uid://ce742l6uay1yy" path="res://assets/Sprites/Tiles/Default/grass.png" id="1_qys6q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6dov3"]
+radius = 9.485987
+height = 34.082
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xf1m2"]
+radius = 6.635643
+height = 23.921955
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivqoy"]
+radius = 6.2442207
+height = 24.230719
+
+[node name="Grass" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qys6q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.0000005, 16.000002)
+rotation = -2.8064895
+shape = SubResource("CapsuleShape2D_6dov3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8.999999, 22)
+rotation = 0.61086524
+shape = SubResource("CapsuleShape2D_xf1m2")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-9.000001, 21.000002)
+rotation = -0.7330383
+shape = SubResource("CapsuleShape2D_ivqoy")

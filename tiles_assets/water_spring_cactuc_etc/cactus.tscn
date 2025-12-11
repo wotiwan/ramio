@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://4v0bojn0264e"]
+
+[ext_resource type="Texture2D" uid="uid://xip5i5pmptmm" path="res://assets/Sprites/Tiles/Default/cactus.png" id="1_tf8xf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05q4q"]
+radius = 15.0
+height = 66.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mevj"]
+height = 36.866024
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uyjrg"]
+height = 37.475624
+
+[node name="Cactus" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tf8xf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_05q4q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-19, 9)
+rotation = -0.2443461
+shape = SubResource("CapsuleShape2D_0mevj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(18.999998, -1.0000005)
+rotation = 0.36651915
+shape = SubResource("CapsuleShape2D_uyjrg")

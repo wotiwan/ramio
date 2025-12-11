@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://brskb0lrnvxwr"]
+
+[ext_resource type="Texture2D" uid="uid://bmv8kwtcsfne6" path="res://assets/Sprites/Enemies/Default/slime_spike_rest.png" id="1_icwfn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5spr0"]
+radius = 21.0
+height = 52.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iymji"]
+a = Vector2(-15, 1)
+b = Vector2(-1, -25)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mnivp"]
+a = Vector2(0, -25)
+b = Vector2(15, -1)
+
+[node name="Slime2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_icwfn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5spr0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_iymji")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_mnivp")

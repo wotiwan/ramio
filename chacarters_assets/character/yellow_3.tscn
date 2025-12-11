@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b27pltal5bg74"]
+
+[ext_resource type="Texture2D" uid="uid://dr17jxwyya4ro" path="res://assets/Sprites/Characters/Default/character_yellow_idle.png" id="1_sfi5w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ugn4"]
+radius = 38.0
+height = 96.0
+
+[node name="Yellow3" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sfi5w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_7ugn4")

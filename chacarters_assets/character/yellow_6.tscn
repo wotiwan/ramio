@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1p164v4cp2ol"]
+
+[ext_resource type="Texture2D" uid="uid://cmhgfi1f7c0pr" path="res://assets/Sprites/Characters/Default/character_yellow_walk_a.png" id="1_xqhin"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17mto"]
+radius = 36.0
+height = 94.0
+
+[node name="Yellow6" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xqhin")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("CapsuleShape2D_17mto")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuvppjemmchj0"]
+
+[ext_resource type="Texture2D" uid="uid://v3t3ptep1qmb" path="res://assets/Sprites/Tiles/Default/fence_broken.png" id="1_wd23v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phkyt"]
+size = Vector2(62, 44)
+
+[node name="FenceBrok" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wd23v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_phkyt")

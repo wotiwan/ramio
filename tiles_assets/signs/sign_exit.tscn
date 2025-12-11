@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm1smdv22fd21"]
+
+[ext_resource type="Texture2D" uid="uid://dvky7in1b3ocv" path="res://assets/Sprites/Tiles/Default/sign_exit.png" id="1_rdco4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fn8yy"]
+radius = 32.0
+height = 64.0
+
+[node name="SignExit" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rdco4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fn8yy")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cevekoyisyrxf"]
+
+[ext_resource type="Texture2D" uid="uid://birtvux5duk2q" path="res://assets/Sprites/Tiles/Default/sign_right.png" id="1_sr7wj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bty5v"]
+radius = 27.0
+height = 66.0
+
+[node name="SignRight" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sr7wj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0)
+shape = SubResource("CapsuleShape2D_bty5v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

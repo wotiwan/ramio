@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://sdhlnhatag2r"]
+
+[ext_resource type="Texture2D" uid="uid://dqdnpig64bile" path="res://assets/Sprites/Characters/Default/character_yellow_duck.png" id="1_mer5k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nbs1a"]
+radius = 35.0
+height = 82.0
+
+[node name="Yellow2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mer5k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21)
+shape = SubResource("CapsuleShape2D_nbs1a")

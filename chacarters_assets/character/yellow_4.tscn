@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1i0gii2nc1h"]
+
+[ext_resource type="Texture2D" uid="uid://cpd5h3rjpini3" path="res://assets/Sprites/Characters/Default/character_yellow_jump.png" id="1_qqf5e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mfao2"]
+radius = 37.0
+height = 96.0
+
+[node name="Yellow4" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qqf5e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("CapsuleShape2D_mfao2")

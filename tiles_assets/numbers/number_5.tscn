@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://j8jcc143am6c"]
+
+[ext_resource type="Texture2D" uid="uid://bilniaigl8km6" path="res://assets/Sprites/Tiles/Default/hud_character_5.png" id="1_gn78e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_geser"]
+radius = 15.0
+height = 44.0
+
+[node name="Number5" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gn78e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_geser")

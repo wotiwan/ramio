@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvkrpxfewfacf"]
+
+[ext_resource type="Texture2D" uid="uid://b46x2ccbvtrs5" path="res://assets/Sprites/Tiles/Default/ladder_middle.png" id="1_lhp24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tljhp"]
+size = Vector2(62, 64)
+
+[node name="LadderMiddle" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lhp24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tljhp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

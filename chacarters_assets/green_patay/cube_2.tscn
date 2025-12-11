@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5mnmo012ltx3"]
+
+[ext_resource type="Texture2D" uid="uid://bxaajt184oj2c" path="res://assets/Sprites/Enemies/Default/slime_block_rest.png" id="1_pjn0q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cut85"]
+size = Vector2(54, 54)
+
+[node name="Cube2" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pjn0q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_cut85")

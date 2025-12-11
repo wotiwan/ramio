@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b41wxh1t6q6s6"]
+
+[ext_resource type="Texture2D" uid="uid://c5s64qoswpjqr" path="res://assets/Sprites/Tiles/Default/fence.png" id="1_s4lvx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krglm"]
+size = Vector2(62, 44)
+
+[node name="Fence" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s4lvx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_krglm")

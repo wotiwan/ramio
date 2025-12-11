@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0rtu0fiajsey"]
+
+[ext_resource type="Texture2D" uid="uid://cm23o5rq54lf8" path="res://assets/Sprites/Enemies/Default/slime_block_jump.png" id="1_inemk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4udpw"]
+size = Vector2(46, 62)
+
+[node name="Cube1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_inemk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4udpw")

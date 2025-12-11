@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://m3mximgy2bxb"]
+
+[ext_resource type="Texture2D" uid="uid://boutgplpecitl" path="res://assets/Sprites/Tiles/Default/sign.png" id="1_tjnpx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8yjg2"]
+radius = 32.0
+height = 64.0
+
+[node name="Sign" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tjnpx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_8yjg2")

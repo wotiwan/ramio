@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3bi74h8sopk4"]
+
+[ext_resource type="Texture2D" uid="uid://b72ladmh70kaq" path="res://assets/Sprites/Tiles/Default/hud_character_1.png" id="1_btjwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76ls2"]
+size = Vector2(28, 43)
+
+[node name="number1" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_btjwp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_76ls2")
