@@ -1,18 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cye07wxma7wex"]
+[gd_scene load_steps=4 format=3 uid="uid://cye07wxma7wex"]
 
 [ext_resource type="Texture2D" uid="uid://dr17jxwyya4ro" path="res://assets/Sprites/Characters/Default/character_yellow_idle.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c0jjswplcttd3" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyb7"]
 radius = 31.0
-height = 78.0
+height = 92.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_3vyb7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12)
+[node name="PlayerShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
 shape = SubResource("CapsuleShape2D_3vyb7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -165)
+limit_right = 1630
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 1.0
+drag_top_margin = 1.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0

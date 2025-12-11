@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://jr7jhumwnp8x"]
+
+[ext_resource type="Script" uid="uid://bc5mffiorwocx" path="res://scripts/barnacle_enemy.gd" id="1_82pgy"]
+[ext_resource type="Texture2D" uid="uid://k5ywxsfdl6sk" path="res://assets/Sprites/Enemies/Default/barnacle_attack_a.png" id="1_hrdp4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82pgy"]
+radius = 18.0
+height = 58.0
+
+[node name="barnacle_enemy" type="CharacterBody2D"]
+script = ExtResource("1_82pgy")
+
+[node name="barnacle_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_hrdp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_82pgy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
