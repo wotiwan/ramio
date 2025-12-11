@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c81fv"]
 size = Vector2(61, 62)
 
-[node name="ZamokRed" type="RigidBody2D"]
+[node name="ZamokRed" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_x3wr5")

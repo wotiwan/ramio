@@ -3,6 +3,8 @@ extends CharacterBody2D
 signal win_signal()
 signal loose_signal()
 
+signal static_collision(collider)
+
 const SPEED = 400.0
 const SPRINT_SPEED = 550.0
 const JUMP_VELOCITY = -700.0
@@ -41,8 +43,12 @@ func handle_collisions(delta: float):
 			print("Мы получили дамагу")
 		
 		if "Yellow" in collider.name:
-			print("УНИЧТОЖИТЬ ЖЕЛТОГО!!!")
-		
+			if normal.y > 0.8:
+				static_collision.emit(collider)
+		if "Grass" in collider.name:
+			if normal.y > 0.8:
+				static_collision.emit(collider)
+			
 
 func _physics_process(delta: float) -> void:
 	
