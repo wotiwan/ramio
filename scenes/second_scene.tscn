@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3tuw4gnh606y"]
+[gd_scene load_steps=28 format=3 uid="uid://d3tuw4gnh606y"]
 
 [ext_resource type="Script" uid="uid://ciqg2pqao4ro8" path="res://scripts/second_scene.gd" id="1_2r8qc"]
 [ext_resource type="Texture2D" uid="uid://bdhulnjihwy7d" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="2_bf4uh"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dn4l2uu3jdsun" path="res://tiles_assets/bombs/lever_left.tscn" id="20_sgwaf"]
 [ext_resource type="PackedScene" uid="uid://dc8ct8ihqp7kr" path="res://tiles_assets/bombs/black_bomb.tscn" id="21_hnggk"]
 [ext_resource type="PackedScene" uid="uid://bwsl1y60rs12" path="res://scenes/slime_enemy.tscn" id="22_0gt4n"]
+[ext_resource type="PackedScene" uid="uid://dswh6cso1i3ww" path="res://scenes/cube_enemy.tscn" id="23_bf4uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
 size = Vector2(30, 768)
@@ -733,6 +734,9 @@ position = Vector2(192, 280)
 
 [node name="slime_enemy" parent="." instance=ExtResource("22_0gt4n")]
 position = Vector2(560, 472)
+
+[node name="cube_enemy" parent="." instance=ExtResource("23_bf4uh")]
+position = Vector2(144, 216)
 
 [connection signal="body_entered" from="Static/ZamokRed/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Static/Door/winArea" to="." method="_on_win_area_body_entered"]
