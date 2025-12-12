@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctdggv0a6hb5g"]
+
+[ext_resource type="Texture2D" uid="uid://dggrkf68yicu" path="res://assets/Sprites/Tiles/Default/terrain_grass_block_center_back.png" id="1_aeik4"]
+
+[node name="Grass12" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_aeik4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -1,11 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cye07wxma7wex"]
+[gd_scene load_steps=22 format=3 uid="uid://cye07wxma7wex"]
 
 [ext_resource type="Texture2D" uid="uid://dr17jxwyya4ro" path="res://assets/Sprites/Characters/Default/character_yellow_idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c0jjswplcttd3" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cmhgfi1f7c0pr" path="res://assets/Sprites/Characters/Default/character_yellow_walk_a.png" id="3_jej6c"]
 [ext_resource type="Texture2D" uid="uid://biap2quu7jaae" path="res://assets/Sprites/Tiles/Default/hud_heart.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bilniaigl8km6" path="res://assets/Sprites/Tiles/Default/hud_character_5.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://b8s7gnv1r8eew" path="res://assets/Sprites/Characters/Default/character_yellow_walk_b.png" id="4_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://cio8oys050yqd" path="res://assets/Sprites/Tiles/Default/hud_heart_half.png" id="4_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://cpd5h3rjpini3" path="res://assets/Sprites/Characters/Default/character_yellow_jump.png" id="5_oprun"]
 [ext_resource type="Texture2D" uid="uid://co08ncwtfqsuo" path="res://assets/Sprites/Tiles/Default/hud_character_4.png" id="5_smehm"]
+[ext_resource type="Texture2D" uid="uid://cxgd3c8vt3hn1" path="res://assets/Sprites/Characters/Default/character_yellow_hit.png" id="6_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://iv78t1k25jcl" path="res://assets/Sprites/Tiles/Default/hud_character_3.png" id="6_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://b1jr1kkc8j7lt" path="res://assets/Sprites/Tiles/Default/hud_character_2.png" id="7_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://b72ladmh70kaq" path="res://assets/Sprites/Tiles/Default/hud_character_1.png" id="8_d2wvv"]
@@ -28,6 +32,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(56, 56)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_3vyb7")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_ur7pv"]
 resource_name = "low_hp"
@@ -46,10 +74,102 @@ tracks/0/keys = {
 "values": [Vector2(56, 56), Vector2(60, 50), Vector2(60, 65), Vector2(51, 50), Vector2(60, 50), Vector2(56, 56)]
 }
 
+[sub_resource type="Animation" id="Animation_qfm1y"]
+resource_name = "walk"
+length = 0.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [ExtResource("3_jej6c"), ExtResource("4_f1ej7")]
+}
+
+[sub_resource type="Animation" id="Animation_fulsm"]
+resource_name = "jump"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [ExtResource("1_3vyb7"), ExtResource("5_oprun")]
+}
+
+[sub_resource type="Animation" id="Animation_4r5pv"]
+resource_name = "hit"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [ExtResource("1_3vyb7"), ExtResource("6_a8ls1"), ExtResource("1_3vyb7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.45999998, 0.45999998, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_60mlk"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("1_3vyb7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y4r1p"]
 _data = {
 &"RESET": SubResource("Animation_y4r1p"),
-&"low_hp": SubResource("Animation_ur7pv")
+&"hit": SubResource("Animation_4r5pv"),
+&"idle": SubResource("Animation_60mlk"),
+&"jump": SubResource("Animation_fulsm"),
+&"low_hp": SubResource("Animation_ur7pv"),
+&"walk": SubResource("Animation_qfm1y")
 }
 
 [node name="Player" type="CharacterBody2D"]
