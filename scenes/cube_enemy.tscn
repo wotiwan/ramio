@@ -1,12 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dswh6cso1i3ww"]
+[gd_scene load_steps=4 format=3 uid="uid://dswh6cso1i3ww"]
 
+[ext_resource type="Script" uid="uid://s8of7b5ewlym" path="res://scripts/cube_enemy.gd" id="1_6g68p"]
 [ext_resource type="Texture2D" uid="uid://bxaajt184oj2c" path="res://assets/Sprites/Enemies/Default/slime_block_rest.png" id="1_n2moh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsyog"]
+size = Vector2(52, 54)
+
 [node name="cube_enemy" type="CharacterBody2D"]
+script = ExtResource("1_6g68p")
 
 [node name="cube_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_n2moh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_qsyog")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

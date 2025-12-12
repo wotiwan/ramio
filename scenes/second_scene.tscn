@@ -1,0 +1,739 @@
+[gd_scene load_steps=27 format=3 uid="uid://d3tuw4gnh606y"]
+
+[ext_resource type="Script" uid="uid://ciqg2pqao4ro8" path="res://scripts/second_scene.gd" id="1_2r8qc"]
+[ext_resource type="Texture2D" uid="uid://bdhulnjihwy7d" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="2_bf4uh"]
+[ext_resource type="Texture2D" uid="uid://ch2s2uyj68hp1" path="res://assets/Sprites/Backgrounds/Default/background_solid_sky.png" id="3_wjajp"]
+[ext_resource type="PackedScene" uid="uid://dutdskt1pd4mj" path="res://scenes/grass_block_top.tscn" id="4_fhinn"]
+[ext_resource type="PackedScene" uid="uid://can3c8gm3rf2p" path="res://tiles_assets/blocks/grass12.tscn" id="5_3crxd"]
+[ext_resource type="PackedScene" uid="uid://jr7jhumwnp8x" path="res://scenes/barnacle_enemy.tscn" id="6_yqwjn"]
+[ext_resource type="PackedScene" uid="uid://cye07wxma7wex" path="res://scenes/player.tscn" id="7_3t8ta"]
+[ext_resource type="PackedScene" uid="uid://b38aobkagdcfr" path="res://scenes/UI/lose_menu.tscn" id="8_0mc3j"]
+[ext_resource type="PackedScene" uid="uid://dkxsgkqll0qpe" path="res://scenes/UI/win_menu.tscn" id="9_b2t02"]
+[ext_resource type="PackedScene" uid="uid://yn86viinomhs" path="res://scenes/UI/pause_menu.tscn" id="10_8xnvn"]
+[ext_resource type="PackedScene" uid="uid://b4lafuqk4kuir" path="res://tiles_assets/zamki_klyuchi/yellow_2.tscn" id="11_o7x4o"]
+[ext_resource type="PackedScene" uid="uid://bijlv07xrx06g" path="res://tiles_assets/zamki_klyuchi/yellow_1.tscn" id="12_r1wo0"]
+[ext_resource type="PackedScene" uid="uid://bhm7xv3khbm8e" path="res://tiles_assets/zamki_klyuchi/key_red.tscn" id="13_h6x66"]
+[ext_resource type="PackedScene" uid="uid://deole34i87d8h" path="res://tiles_assets/zamki_klyuchi/zamok_red.tscn" id="14_0bc0m"]
+[ext_resource type="PackedScene" uid="uid://mbcfryqfr4t8" path="res://tiles_assets/blocks/grass7.tscn" id="15_wx7uu"]
+[ext_resource type="PackedScene" uid="uid://cjfoqnysc11w8" path="res://tiles_assets/blocks/grass5.tscn" id="16_h2e8y"]
+[ext_resource type="PackedScene" uid="uid://cbo0ayjo4u4t8" path="res://tiles_assets/blocks/grass13.tscn" id="17_6s31h"]
+[ext_resource type="PackedScene" uid="uid://cjblbgua7oaat" path="res://tiles_assets/doors/Door.tscn" id="18_b8ep8"]
+[ext_resource type="PackedScene" uid="uid://mkkir7xqv0g2" path="res://scenes/heart.tscn" id="19_68ppd"]
+[ext_resource type="PackedScene" uid="uid://dn4l2uu3jdsun" path="res://tiles_assets/bombs/lever_left.tscn" id="20_sgwaf"]
+[ext_resource type="PackedScene" uid="uid://dc8ct8ihqp7kr" path="res://tiles_assets/bombs/black_bomb.tscn" id="21_hnggk"]
+[ext_resource type="PackedScene" uid="uid://bwsl1y60rs12" path="res://scenes/slime_enemy.tscn" id="22_0gt4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
+size = Vector2(30, 768)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muem4"]
+radius = 98.95454
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp3eg"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2r8qc"]
+radius = 80.0
+
+[node name="second_scene" type="Node2D"]
+position = Vector2(16, 24)
+script = ExtResource("1_2r8qc")
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -2
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background"]
+position = Vector2(128, 384)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds2" type="Sprite2D" parent="Background/BackgroundClouds"]
+position = Vector2(1280, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds2"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds2/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds2/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds/BackgroundClouds2/BackgroundClouds/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background"]
+position = Vector2(128, 128)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky2" type="Sprite2D" parent="Background"]
+position = Vector2(-1152, 128)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky2"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky2/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky2/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky2/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky3" type="Sprite2D" parent="Background"]
+position = Vector2(1408, 128)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky3"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky3/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky3/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky3/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky4" type="Sprite2D" parent="Background"]
+position = Vector2(-1152, -128)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky4"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky4/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky4/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky4/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky5" type="Sprite2D" parent="Background"]
+position = Vector2(128, -128)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky5"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky5/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky5/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky5/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky6" type="Sprite2D" parent="Background"]
+position = Vector2(1408, -128)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky6"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky6/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky6/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky6/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundClouds2" type="Sprite2D" parent="Background"]
+position = Vector2(-1152, 384)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds2"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds2/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds2/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="BackgroundClouds" type="Sprite2D" parent="Background/BackgroundClouds2/BackgroundClouds/BackgroundClouds/BackgroundClouds"]
+position = Vector2(256, 0)
+texture = ExtResource("2_bf4uh")
+
+[node name="Static" type="Node2D" parent="Background"]
+
+[node name="LeftWall" type="StaticBody2D" parent="Background/Static"]
+position = Vector2(100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Static/LeftWall"]
+position = Vector2(-724, 128)
+shape = SubResource("RectangleShape2D_ya4ey")
+
+[node name="BackgroundSolidSky7" type="Sprite2D" parent="Background"]
+position = Vector2(-1144, -384)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky7"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky7/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky7/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky7/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky8" type="Sprite2D" parent="Background"]
+position = Vector2(136, -384)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky8"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky8/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky8/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky8/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky9" type="Sprite2D" parent="Background"]
+position = Vector2(1416, -384)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky9"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky9/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky9/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(248, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="BackgroundSolidSky" type="Sprite2D" parent="Background/BackgroundSolidSky9/BackgroundSolidSky/BackgroundSolidSky/BackgroundSolidSky"]
+position = Vector2(256, 0)
+texture = ExtResource("3_wjajp")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="grass_block_top" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(32, 536)
+
+[node name="grass_block_top2" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(544, 536)
+
+[node name="grass_block_top3" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(480, 536)
+
+[node name="grass_block_top4" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(416, 536)
+
+[node name="grass_block_top5" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(352, 536)
+
+[node name="grass_block_top6" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(288, 536)
+
+[node name="grass_block_top7" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(224, 536)
+
+[node name="grass_block_top8" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(160, 536)
+
+[node name="grass_block_top9" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(96, 536)
+
+[node name="grass_block_top10" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(800, 536)
+
+[node name="grass_block_top11" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(736, 536)
+
+[node name="grass_block_top12" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(672, 536)
+
+[node name="grass_block_top13" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(608, 536)
+
+[node name="grass_block_top14" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-800, 536)
+
+[node name="grass_block_top15" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-288, 536)
+
+[node name="grass_block_top16" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-352, 536)
+
+[node name="grass_block_top17" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-416, 536)
+
+[node name="grass_block_top18" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-480, 536)
+
+[node name="grass_block_top19" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-544, 536)
+
+[node name="grass_block_top20" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-608, 536)
+
+[node name="grass_block_top21" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-672, 536)
+
+[node name="grass_block_top22" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-736, 536)
+
+[node name="grass_block_top23" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-32, 536)
+
+[node name="grass_block_top24" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-96, 536)
+
+[node name="grass_block_top25" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-160, 536)
+
+[node name="grass_block_top26" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(-224, 536)
+
+[node name="grass_block_top27" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(864, 536)
+
+[node name="grass_block_top28" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1376, 536)
+
+[node name="grass_block_top29" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1312, 536)
+
+[node name="grass_block_top30" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1248, 536)
+
+[node name="grass_block_top31" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1184, 536)
+
+[node name="grass_block_top32" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1120, 536)
+
+[node name="grass_block_top33" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1056, 536)
+
+[node name="grass_block_top34" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(992, 536)
+
+[node name="grass_block_top35" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(928, 536)
+
+[node name="grass_block_top36" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1632, 536)
+
+[node name="grass_block_top37" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1568, 536)
+
+[node name="grass_block_top38" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1504, 536)
+
+[node name="grass_block_top39" parent="Ground" instance=ExtResource("4_fhinn")]
+position = Vector2(1440, 536)
+
+[node name="Grass12" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(224, 600)
+
+[node name="Grass13" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(288, 600)
+
+[node name="Grass14" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(352, 600)
+
+[node name="Grass15" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(416, 600)
+
+[node name="Grass16" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(224, 664)
+
+[node name="Grass17" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(288, 664)
+
+[node name="Grass18" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(352, 664)
+
+[node name="Grass19" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(416, 664)
+
+[node name="Grass20" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(480, 600)
+
+[node name="Grass21" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(544, 600)
+
+[node name="Grass22" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(608, 600)
+
+[node name="Grass23" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(672, 600)
+
+[node name="Grass24" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(480, 664)
+
+[node name="Grass25" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(544, 664)
+
+[node name="Grass26" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(608, 664)
+
+[node name="Grass27" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(672, 664)
+
+[node name="Grass28" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(736, 600)
+
+[node name="Grass29" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(800, 600)
+
+[node name="Grass30" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(864, 600)
+
+[node name="Grass31" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(928, 600)
+
+[node name="Grass32" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(736, 664)
+
+[node name="Grass33" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(800, 664)
+
+[node name="Grass34" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(864, 664)
+
+[node name="Grass35" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(928, 664)
+
+[node name="Grass36" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(992, 600)
+
+[node name="Grass37" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1056, 600)
+
+[node name="Grass38" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1120, 600)
+
+[node name="Grass39" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1184, 600)
+
+[node name="Grass40" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(992, 664)
+
+[node name="Grass41" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1056, 664)
+
+[node name="Grass42" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1120, 664)
+
+[node name="Grass43" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1184, 664)
+
+[node name="Grass44" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-800, 600)
+
+[node name="Grass45" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-736, 600)
+
+[node name="Grass46" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-672, 600)
+
+[node name="Grass47" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-608, 600)
+
+[node name="Grass48" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-800, 664)
+
+[node name="Grass49" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-736, 664)
+
+[node name="Grass50" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-672, 664)
+
+[node name="Grass51" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-608, 664)
+
+[node name="Grass52" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-544, 600)
+
+[node name="Grass53" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-480, 600)
+
+[node name="Grass54" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-416, 600)
+
+[node name="Grass55" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-352, 600)
+
+[node name="Grass56" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-544, 664)
+
+[node name="Grass57" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-480, 664)
+
+[node name="Grass58" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-416, 664)
+
+[node name="Grass59" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-352, 664)
+
+[node name="Grass60" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-288, 600)
+
+[node name="Grass61" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-224, 600)
+
+[node name="Grass62" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-160, 600)
+
+[node name="Grass63" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-96, 600)
+
+[node name="Grass64" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-288, 664)
+
+[node name="Grass65" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-224, 664)
+
+[node name="Grass66" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-160, 664)
+
+[node name="Grass67" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-96, 664)
+
+[node name="Grass68" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-32, 600)
+
+[node name="Grass69" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(32, 600)
+
+[node name="Grass70" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(96, 600)
+
+[node name="Grass71" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(160, 600)
+
+[node name="Grass72" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(-32, 664)
+
+[node name="Grass73" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(32, 664)
+
+[node name="Grass74" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(96, 664)
+
+[node name="Grass75" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(160, 664)
+
+[node name="Grass76" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1248, 600)
+
+[node name="Grass77" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1312, 600)
+
+[node name="Grass78" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1376, 600)
+
+[node name="Grass79" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1248, 664)
+
+[node name="Grass80" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1312, 664)
+
+[node name="Grass81" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1376, 664)
+
+[node name="Grass82" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1440, 600)
+
+[node name="Grass83" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1504, 600)
+
+[node name="Grass84" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1568, 600)
+
+[node name="Grass85" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1632, 600)
+
+[node name="Grass86" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1440, 664)
+
+[node name="Grass87" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1504, 664)
+
+[node name="Grass88" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1568, 664)
+
+[node name="Grass89" parent="Ground" instance=ExtResource("5_3crxd")]
+position = Vector2(1632, 664)
+
+[node name="barnacle_enemy" parent="." instance=ExtResource("6_yqwjn")]
+position = Vector2(-480, 472)
+
+[node name="Player" parent="." instance=ExtResource("7_3t8ta")]
+position = Vector2(-32, 400)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LoseMenu" parent="CanvasLayer" instance=ExtResource("8_0mc3j")]
+visible = false
+
+[node name="WinMenu" parent="CanvasLayer" instance=ExtResource("9_b2t02")]
+visible = false
+next_level_scene = "res://scenes/third_scene.tscn"
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("10_8xnvn")]
+visible = false
+
+[node name="Static" type="Node2D" parent="."]
+
+[node name="Yellow2" parent="Static" instance=ExtResource("11_o7x4o")]
+position = Vector2(264, -112)
+
+[node name="Yellow1" parent="Static" instance=ExtResource("12_r1wo0")]
+position = Vector2(328, -112)
+
+[node name="KeyRed" parent="Static" instance=ExtResource("13_h6x66")]
+position = Vector2(192, 232)
+
+[node name="ZamokRed" parent="Static" instance=ExtResource("14_0bc0m")]
+position = Vector2(848, -104)
+
+[node name="Area2D" type="Area2D" parent="Static/ZamokRed"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/ZamokRed/Area2D"]
+shape = SubResource("CircleShape2D_muem4")
+
+[node name="Grass7" parent="Static" instance=ExtResource("15_wx7uu")]
+position = Vector2(384, 280)
+
+[node name="Grass5" parent="Static" instance=ExtResource("16_h2e8y")]
+position = Vector2(128, 280)
+
+[node name="Grass13" parent="Static" instance=ExtResource("17_6s31h")]
+position = Vector2(256, 280)
+
+[node name="KeyRed2" parent="Static" instance=ExtResource("13_h6x66")]
+position = Vector2(832, -104)
+
+[node name="Grass8" parent="Static" instance=ExtResource("15_wx7uu")]
+position = Vector2(920, 162)
+
+[node name="Grass14" parent="Static" instance=ExtResource("17_6s31h")]
+position = Vector2(856, 162)
+
+[node name="Grass6" parent="Static" instance=ExtResource("16_h2e8y")]
+position = Vector2(792, 162)
+
+[node name="Door" parent="Static" instance=ExtResource("18_b8ep8")]
+position = Vector2(1448, 504)
+
+[node name="winArea" type="Area2D" parent="Static/Door"]
+
+[node name="winConditionArea" type="CollisionShape2D" parent="Static/Door/winArea"]
+position = Vector2(8, -40)
+shape = SubResource("CircleShape2D_dp3eg")
+
+[node name="heart" parent="Static" instance=ExtResource("19_68ppd")]
+position = Vector2(320, 232)
+
+[node name="LeverLeft" parent="Static" instance=ExtResource("20_sgwaf")]
+position = Vector2(256, 216)
+
+[node name="BlackBomb" parent="Static" instance=ExtResource("21_hnggk")]
+position = Vector2(856, 96)
+
+[node name="BoomArea" type="Area2D" parent="Static/BlackBomb"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/BlackBomb/BoomArea"]
+shape = SubResource("CircleShape2D_2r8qc")
+
+[node name="Grass15" parent="Static" instance=ExtResource("17_6s31h")]
+position = Vector2(320, 280)
+
+[node name="Grass16" parent="Static" instance=ExtResource("17_6s31h")]
+position = Vector2(192, 280)
+
+[node name="slime_enemy" parent="." instance=ExtResource("22_0gt4n")]
+position = Vector2(560, 472)
+
+[connection signal="body_entered" from="Static/ZamokRed/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Static/Door/winArea" to="." method="_on_win_area_body_entered"]
+[connection signal="body_entered" from="Static/BlackBomb/BoomArea" to="." method="_on_boom_area_body_entered"]

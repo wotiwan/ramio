@@ -15,6 +15,9 @@ var red_key_collected: bool = false
 var red_lock_unlocked: bool = false
 @onready var heart_1 = $Static/heart
 var hp_heal_1_collected: bool = false
+@onready var bomb = $Static/BlackBomb
+var bomb_activated: bool = false
+@onready var bomb_area = $Static/BlackBomb/BoomArea
 
 @onready var door = $Static/Door
 
@@ -57,6 +60,20 @@ func _on_collision(collider):
 	
 	if "Grass" in collider.name:
 		animate_block(collider, true)
+	if "Lever" in collider.name:
+		if "to_right" in collider.name:
+			change_lever_state(collider, true)
+			if !bomb_activated:
+				bomb_activated = true
+				bomb.get_child(1).play("break")
+				await bomb.get_child(1).animation_finished
+				for item in bomb_area.get_overlapping_bodies():
+					if "Player" in item.name:
+						change_player_hp.emit(-4)
+					else:
+						item.queue_free()
+		elif "to_left" in collider.name:
+			change_lever_state(collider, false)
 					
 func animate_block(collider, to_destroy: bool):
 	collider.get_child(1).play("break")  # Обращаемся к анимейшн плееру
@@ -87,3 +104,19 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_win_area_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
 		win_menu.set_active()
+
+func change_lever_state(lever: Node2D, to_active: bool):
+	if to_active:
+		lever.get_child(2).disabled = false
+		lever.get_child(1).disabled = true
+		lever.get_child(0).get_child(0).visible = true
+		lever.get_child(0).get_child(1).visible = false
+	else:
+		lever.get_child(1).disabled = false
+		lever.get_child(2).disabled = true
+		lever.get_child(0).get_child(1).visible = true
+		lever.get_child(0).get_child(0).visible = false
+
+
+func _on_boom_area_body_entered(body: Node2D) -> void:
+	print(body)

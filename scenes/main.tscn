@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://cvfeyaqc6nbqv"]
+[gd_scene load_steps=24 format=3 uid="uid://cvfeyaqc6nbqv"]
 
 [ext_resource type="Script" uid="uid://bxiyiomojng08" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bdhulnjihwy7d" path="res://assets/Sprites/Backgrounds/Default/background_clouds.png" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://mkkir7xqv0g2" path="res://scenes/heart.tscn" id="3_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://ch2s2uyj68hp1" path="res://assets/Sprites/Backgrounds/Default/background_solid_sky.png" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dutdskt1pd4mj" path="res://scenes/grass_block_top.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://jr7jhumwnp8x" path="res://scenes/barnacle_enemy.tscn" id="5_85g3d"]
@@ -18,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cjfoqnysc11w8" path="res://tiles_assets/blocks/grass5.tscn" id="16_muem4"]
 [ext_resource type="PackedScene" uid="uid://cbo0ayjo4u4t8" path="res://tiles_assets/blocks/grass13.tscn" id="17_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://cjblbgua7oaat" path="res://tiles_assets/doors/Door.tscn" id="18_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bwsl1y60rs12" path="res://scripts/slime_enemy.tscn" id="19_0ld40"]
+[ext_resource type="PackedScene" uid="uid://bwsl1y60rs12" path="res://scenes/slime_enemy.tscn" id="19_0ld40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
 size = Vector2(30, 768)
@@ -703,6 +704,9 @@ position = Vector2(1448, 504)
 [node name="winConditionArea" type="CollisionShape2D" parent="Static/Door/winArea"]
 position = Vector2(8, -40)
 shape = SubResource("CircleShape2D_dp3eg")
+
+[node name="heart" parent="Static" instance=ExtResource("3_gqmmt")]
+position = Vector2(320, 232)
 
 [node name="slime_enemy" parent="." instance=ExtResource("19_0ld40")]
 position = Vector2(560, 472)

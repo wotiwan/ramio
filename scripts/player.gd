@@ -13,11 +13,13 @@ const GRAVITY = 1000.0
 const MAX_PLAYER_HP = 5
 var player_hp = 5
 
+var is_damaged: bool = false
+var damage_delay: float = 0.0
+const DAMAGE_STUN: float = 0.5
+
 var is_stunned: bool = false
 var stun_delay: float = 0.0
 const STUN_TIME = 0.5
-
-var damage_delay: float = 0.0
 
 var max_cam_x_position = 0.0
 const camera_offset = 50.0
@@ -28,6 +30,9 @@ const camera_offset = 50.0
 
 var is_double_jump: bool = false
 
+func _ready() -> void:
+	get_parent().connect("change_player_hp", _on_hp_change)
+	
 func handle_collisions(delta: float):
 	var platform = null
 	var collision_count = get_slide_collision_count()
@@ -35,19 +40,21 @@ func handle_collisions(delta: float):
 		var collision = get_slide_collision(c)
 		var collider = collision.get_collider()
 		var normal = collision.get_normal()
+		if collider == null:
+			return
 		if "barnacle" in collider.name:
 			if abs(normal.x) > 0.8:
 				horizontal_bounce(true)
 			elif abs(normal.y) > 0.8:
 				vertical_bounce()
-
-			player_hp -= 1
+			
+			take_damage(1)
 			print("Мы получили дамагу")
 		
 		if "slime" in collider.name:
 			if abs(normal.x) > 0.8:
 				horizontal_bounce(true)
-				player_hp -= 1
+				take_damage(1)
 				print("Мы получили дамагу")
 			if abs(normal.y) > 0.8:
 				vertical_bounce()
@@ -59,6 +66,12 @@ func handle_collisions(delta: float):
 		if "Grass" in collider.name:
 			if normal.y > 0.8:
 				static_collision.emit(collider)
+		if "Lever" in collider.name:
+			if normal.x > 0.8:
+				collider.name = "Lever_to_left"
+			elif normal.x < -0.8:
+				collider.name = "Lever_to_right"
+			static_collision.emit(collider)
 			
 
 func _physics_process(delta: float) -> void:
@@ -82,6 +95,9 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		handle_stun(delta)
+	
+	if is_damaged:
+		handle_damage(delta)
 	
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -133,6 +149,12 @@ func handle_stun(delta):
 	if stun_delay <= 0:
 		is_stunned = false
 	stun_delay -= delta
+	
+	
+func handle_damage(delta):
+	if damage_delay <= 0:
+		is_damaged = false
+	damage_delay -= delta
 
 
 func horizontal_bounce(short_bounce: bool):
@@ -168,6 +190,7 @@ func handle_hp():
 		animation.play("low_hp")
 	elif player_hp > 1:
 		canvas.get_child(0).get_child(0).visible = true
+		canvas.get_child(0).get_child(1).visible = false
 	
 	for i in range(1, MAX_PLAYER_HP + 1):
 		if i == player_hp:
@@ -175,3 +198,11 @@ func handle_hp():
 		else:
 			canvas.get_child(i).visible = false
 	
+func _on_hp_change(diff: int):
+	player_hp = min(player_hp + diff, MAX_PLAYER_HP)
+
+func take_damage(damage: int):
+	if !is_damaged:
+		player_hp -= damage
+		is_damaged = true
+		damage_delay = DAMAGE_STUN

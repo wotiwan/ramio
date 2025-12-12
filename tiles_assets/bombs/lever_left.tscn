@@ -1,26 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://dn4l2uu3jdsun"]
 
 [ext_resource type="Texture2D" uid="uid://dtf0o7devprdl" path="res://assets/Sprites/Tiles/Default/lever_left.png" id="1_7mht4"]
+[ext_resource type="Texture2D" uid="uid://boixclsskjotr" path="res://assets/Sprites/Tiles/Default/lever_right.png" id="1_j3ovm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3ovm"]
 height = 50.771152
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tby6x"]
-height = 40.0
+[node name="LeverLeft" type="StaticBody2D"]
 
-[node name="LeverLeft" type="RigidBody2D"]
+[node name="Sprites" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
+visible = false
+texture = ExtResource("1_j3ovm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
 texture = ExtResource("1_7mht4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShapeLeft" type="CollisionShape2D" parent="."]
 position = Vector2(-10.999998, 6)
 rotation = -0.41887903
 shape = SubResource("CapsuleShape2D_j3ovm")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 22)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_tby6x")
+[node name="CollisionShapeRight" type="CollisionShape2D" parent="."]
+position = Vector2(10.999999, 5.999999)
+rotation = 0.41887903
+shape = SubResource("CapsuleShape2D_j3ovm")
+disabled = true

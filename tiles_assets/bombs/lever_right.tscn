@@ -8,7 +8,7 @@ height = 47.589836
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_invko"]
 height = 37.994213
 
-[node name="LeverRight" type="RigidBody2D"]
+[node name="LeverRight" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rscns")

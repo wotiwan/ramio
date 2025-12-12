@@ -1,5 +1,7 @@
 extends Control
 
+@export var next_level_scene: String = "res://scenes/second_scene.tscn"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
@@ -22,4 +24,4 @@ func _on_exit_button_button_down() -> void:
 func _on_next_lvl_button_button_down() -> void:
 	get_tree().paused = false # На случай если пользователь жмал esc и поставил паузу
 	# Название следующего уровня
-	get_tree().change_scene_to_file("res://scenes/second_scene.tscn")
+	get_tree().change_scene_to_file(next_level_scene)
