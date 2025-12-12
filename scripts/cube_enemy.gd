@@ -11,6 +11,9 @@ var target_detected := false
 @onready var idle_sprite = $cube_sprite
 @onready var angry_sprite = $angry_sprite
 @onready var flight_sprite = $flight_sprite
+@onready var ready_to_jump_sprite = $ready_to_jump_sprite
+
+@onready var animation = $AnimationPlayer
 
 enum state {
 	IDLE,
@@ -25,6 +28,10 @@ func _ready():
 
 func _physics_process(delta):
 	
+	# Гравитация
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
 	if cur_state == state.ANGRY:
 		handle_angry()
 	elif cur_state == state.IDLE:
@@ -32,9 +39,7 @@ func _physics_process(delta):
 	elif cur_state == state.IN_FLiGHT:
 		handle_flight()
 	
-	# Гравитация
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	
 		
 	
 	# Если видит игрока — прыгнуть в его сторону
@@ -74,7 +79,12 @@ func handle_angry():
 	idle_sprite.visible = false
 	angry_sprite.visible = true
 	## TODO: Тут добавить ожидание когда проиграет анимка и потом делаем state.flight
-	jump_towards_player()
+	if !animation.is_playing():
+		#animation.play("jump")
+		#await animation.animation_finished
+		#ready_to_jump_sprite.visible = false
+		#print("animation played!")
+		jump_towards_player()
 	
 func handle_idle():
 	flight_sprite.visible = false

@@ -1,15 +1,131 @@
-[gd_scene load_steps=7 format=3 uid="uid://dswh6cso1i3ww"]
+[gd_scene load_steps=12 format=3 uid="uid://dswh6cso1i3ww"]
 
 [ext_resource type="Script" uid="uid://s8of7b5ewlym" path="res://scripts/cube_enemy.gd" id="1_6g68p"]
 [ext_resource type="Texture2D" uid="uid://bxaajt184oj2c" path="res://assets/Sprites/Enemies/Default/slime_block_rest.png" id="1_n2moh"]
 [ext_resource type="Texture2D" uid="uid://ys8ggmky50u" path="res://assets/Sprites/Enemies/Default/slime_block_walk_a.png" id="2_nhox6"]
 [ext_resource type="Texture2D" uid="uid://cm23o5rq54lf8" path="res://assets/Sprites/Enemies/Default/slime_block_jump.png" id="3_ois53"]
+[ext_resource type="Texture2D" uid="uid://10s4uspr4eyd" path="res://assets/Sprites/Enemies/Default/slime_block_walk_b.png" id="5_jm66v"]
+
+[sub_resource type="Animation" id="Animation_ois53"]
+resource_name = "break"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_jm66v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("angry_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ready_to_jump_sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cube_sprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_i2cr7"]
+resource_name = "jump"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("angry_sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ready_to_jump_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cube_sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jm66v"]
+_data = {
+&"RESET": SubResource("Animation_jm66v"),
+&"break": SubResource("Animation_ois53"),
+&"jump": SubResource("Animation_i2cr7")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsyog"]
 size = Vector2(52, 54)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6g68p"]
-radius = 122.0041
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ois53"]
+radius = 25.0
+height = 672.0
 
 [node name="cube_enemy" type="CharacterBody2D"]
 script = ExtResource("1_6g68p")
@@ -18,6 +134,15 @@ script = ExtResource("1_6g68p")
 visible = false
 texture = ExtResource("2_nhox6")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jm66v")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_qsyog")
+
 [node name="flight_sprite" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_ois53")
@@ -25,18 +150,17 @@ texture = ExtResource("3_ois53")
 [node name="cube_sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_n2moh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_qsyog")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="JumpArea" type="Area2D" parent="."]
 position = Vector2(65, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea"]
-position = Vector2(-65, -14)
-shape = SubResource("CircleShape2D_6g68p")
+position = Vector2(-65, -10)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ois53")
+
+[node name="ready_to_jump_sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("5_jm66v")
 
 [connection signal="body_entered" from="JumpArea" to="." method="_on_jump_area_body_entered"]
 [connection signal="body_exited" from="JumpArea" to="." method="_on_jump_area_body_exited"]

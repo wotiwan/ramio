@@ -59,6 +59,14 @@ func handle_collisions(delta: float):
 			if abs(normal.y) > 0.8:
 				vertical_bounce()
 				animate_block(collider, true)
+		if "cube_enemy" in collider.name:
+			if abs(normal.x) > 0.8:
+				horizontal_bounce(true)
+				take_damage(1)
+				print("Мы получили дамагу")
+			if abs(normal.y) > 0.8:
+				vertical_bounce()
+				animate_block(collider, true)
 				
 		if "Yellow" in collider.name:
 			if normal.y > 0.8:
@@ -72,6 +80,7 @@ func handle_collisions(delta: float):
 			elif normal.x < -0.8:
 				collider.name = "Lever_to_right"
 			static_collision.emit(collider)
+		
 			
 
 func _physics_process(delta: float) -> void:

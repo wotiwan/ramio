@@ -34,7 +34,7 @@ radius = 98.95454
 radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2r8qc"]
-radius = 80.0
+radius = 168.19037
 
 [node name="second_scene" type="Node2D"]
 position = Vector2(16, 24)
@@ -229,7 +229,7 @@ texture = ExtResource("2_bf4uh")
 position = Vector2(100, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Static/LeftWall"]
-position = Vector2(-724, 128)
+position = Vector2(-916, 128)
 shape = SubResource("RectangleShape2D_ya4ey")
 
 [node name="BackgroundSolidSky7" type="Sprite2D" parent="Background"]
