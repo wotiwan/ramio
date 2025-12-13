@@ -213,6 +213,7 @@ func _on_hp_change(diff: int):
 
 func take_damage(damage: int):
 	if !is_damaged:
+		#animation.play("hit")
 		player_hp -= damage
 		is_damaged = true
 		damage_delay = DAMAGE_STUN
