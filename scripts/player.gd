@@ -115,13 +115,14 @@ func _physics_process(delta: float) -> void:
 		is_double_jump = true
 	
 	if not is_on_floor():
-		pass
+		#pass
 		#animation.play("double_jump" if is_double_jump else "jump")
+		animation.play("jump")
 	elif direction != 0:
-		#animation.play("run")
+		animation.play("walk")
 		is_double_jump = false
 	else:
-		#animation.play("idle")
+		animation.play("idle")
 		is_double_jump = false
 	
 	handle_collisions(delta)
