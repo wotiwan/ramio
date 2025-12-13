@@ -429,3 +429,8 @@ texture = ExtResource("5_smehm")
 visible = false
 position = Vector2(104, 56)
 texture = ExtResource("4_dqkch")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y4r1p")
+}

@@ -25,6 +25,7 @@ var max_cam_x_position = 0.0
 const camera_offset = 50.0
 
 @onready var animation = get_node("AnimationPlayer")
+@onready var animation2 = get_node("AnimationPlayer2")
 @onready var sprite = get_node("PlayerSprite")
 @onready var canvas = get_node("Camera2D/CanvasLayer")
 
@@ -197,7 +198,7 @@ func handle_hp():
 	if player_hp == 1:
 		canvas.get_child(0).get_child(0).visible = false ## Меняем вид сердечка
 		canvas.get_child(0).get_child(1).visible = true ## Меняем вид сердечка
-		animation.play("low_hp")
+		animation2.play("low_hp")
 	elif player_hp > 1:
 		canvas.get_child(0).get_child(0).visible = true
 		canvas.get_child(0).get_child(1).visible = false
