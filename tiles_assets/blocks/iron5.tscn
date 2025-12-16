@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbobu"]
 size = Vector2(63, 50)
 
-[node name="Iron5" type="RigidBody2D"]
+[node name="Iron5" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_imd1e")

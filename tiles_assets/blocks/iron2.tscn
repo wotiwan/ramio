@@ -16,7 +16,7 @@ b = Vector2(-30, 30)
 a = Vector2(28, 9)
 b = Vector2(3, 28)
 
-[node name="Iron2" type="RigidBody2D"]
+[node name="Iron2" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_am74w")

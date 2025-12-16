@@ -20,7 +20,7 @@ b = Vector2(-13, 23)
 a = Vector2(31, 30)
 b = Vector2(5, 29)
 
-[node name="Iron27" type="RigidBody2D"]
+[node name="Iron27" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oeodn")

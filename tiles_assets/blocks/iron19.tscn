@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smrap"]
 size = Vector2(63, 62)
 
-[node name="Iron19" type="RigidBody2D"]
+[node name="Iron19" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wh6rg")

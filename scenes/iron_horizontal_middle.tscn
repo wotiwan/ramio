@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dovqgbijfum0v"]
+
+[ext_resource type="Texture2D" uid="uid://sgt1mrvapxuy" path="res://assets/Sprites/Tiles/Default/terrain_dirt_block_top.png" id="1_gwj41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwj41"]
+size = Vector2(64, 62)
+
+[node name="IronHorizontalMiddle" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gwj41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gwj41")

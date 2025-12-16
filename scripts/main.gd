@@ -36,7 +36,8 @@ func _on_win():
 
 func _on_loose():
 	lose_menu.set_active()
-	player.queue_free()
+	player.visible = false
+	get_tree().paused = true
 
 
 func _on_collision(collider):
