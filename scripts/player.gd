@@ -40,6 +40,8 @@ func _ready() -> void:
 		cam_limit_right = 6800
 	camera.limit_right = cam_limit_right
 	
+	print(camera.limit_right)
+	
 func handle_collisions(delta: float):
 	var platform = null
 	var collision_count = get_slide_collision_count()
