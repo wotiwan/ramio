@@ -94,7 +94,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_4r5pv"]
 resource_name = "hit"
-length = 0.6
+length = 0.55
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -102,7 +102,7 @@ tracks/0/path = NodePath("PlayerSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6),
+"times": PackedFloat32Array(0, 0.01, 0.55),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [ExtResource("1_3vyb7"), ExtResource("6_a8ls1"), ExtResource("1_3vyb7")]
@@ -114,7 +114,7 @@ tracks/1/path = NodePath("PlayerSprite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.55),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0.45999998, 0.45999998, 1), Color(1, 1, 1, 1)]
@@ -382,10 +382,11 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -165)
+limit_left = -800
 limit_right = 1630
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 1.0
+drag_left_margin = 0.5
 drag_top_margin = 1.0
 drag_right_margin = 0.0
 drag_bottom_margin = 0.0

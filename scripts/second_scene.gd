@@ -14,7 +14,9 @@ var red_key_collected: bool = false
 @onready var red_lock = $Static/ZamokRed
 var red_lock_unlocked: bool = false
 @onready var heart_1 = $Static/heart
+@onready var heart_2 = $Static/heart2
 var hp_heal_1_collected: bool = false
+var hp_heal_2_collected: bool = false
 @onready var bomb = $Static/BlackBomb
 var bomb_activated: bool = false
 @onready var bomb_area = $Static/BlackBomb/BoomArea
@@ -39,7 +41,8 @@ func _on_win():
 
 func _on_loose():
 	lose_menu.set_active()
-	player.queue_free()
+	player.visible = false
+	get_tree().paused = true
 
 
 func _on_collision(collider):
@@ -47,6 +50,13 @@ func _on_collision(collider):
 		if !red_key_collected:
 			animate_item_collect(red_key)
 			red_key_collected = true
+			animate_block(collider, false)
+	
+	if "Yellow3" in collider.name:
+		if !hp_heal_2_collected:
+			change_player_hp.emit(100)
+			animate_item_collect(heart_2)
+			hp_heal_2_collected = true
 			animate_block(collider, false)
 	
 	if "Yellow1" in collider.name:

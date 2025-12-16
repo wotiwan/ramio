@@ -10,6 +10,9 @@ const SPRINT_SPEED = 550.0
 const JUMP_VELOCITY = -700.0
 const GRAVITY = 1000.0
 
+@onready var camera := get_viewport().get_camera_2d()
+var cam_limit_right: int = 1630
+
 const MAX_PLAYER_HP = 5
 var player_hp = 5
 
@@ -24,7 +27,7 @@ const STUN_TIME = 0.5
 var max_cam_x_position = 0.0
 const camera_offset = 50.0
 
-@onready var animation = get_node("AnimationPlayer")
+@onready var animation: AnimationPlayer = get_node("AnimationPlayer")
 @onready var animation2 = get_node("AnimationPlayer2")
 @onready var sprite = get_node("PlayerSprite")
 @onready var canvas = get_node("Camera2D/CanvasLayer")
@@ -33,6 +36,9 @@ var is_double_jump: bool = false
 
 func _ready() -> void:
 	get_parent().connect("change_player_hp", _on_hp_change)
+	if get_tree().current_scene.name == "second_scene":
+		cam_limit_right = 6800
+	camera.limit_right = cam_limit_right
 	
 func handle_collisions(delta: float):
 	var platform = null
@@ -43,6 +49,7 @@ func handle_collisions(delta: float):
 		var normal = collision.get_normal()
 		if collider == null:
 			return
+				
 		if "barnacle" in collider.name:
 			if abs(normal.x) > 0.8:
 				horizontal_bounce(true)
@@ -50,13 +57,13 @@ func handle_collisions(delta: float):
 				vertical_bounce()
 			
 			take_damage(1)
-			print("Мы получили дамагу")
+			#print("Мы получили дамагу")
 		
 		if "slime" in collider.name:
 			if abs(normal.x) > 0.8:
 				horizontal_bounce(true)
 				take_damage(1)
-				print("Мы получили дамагу")
+				#print("Мы получили дамагу")
 			if abs(normal.y) > 0.8:
 				vertical_bounce()
 				animate_block(collider, true)
@@ -64,7 +71,7 @@ func handle_collisions(delta: float):
 			if abs(normal.x) > 0.8:
 				horizontal_bounce(true)
 				take_damage(1)
-				print("Мы получили дамагу")
+				#print("Мы получили дамагу")
 			if abs(normal.y) > 0.8:
 				vertical_bounce()
 				animate_block(collider, true)
@@ -81,6 +88,9 @@ func handle_collisions(delta: float):
 			elif normal.x < -0.8:
 				collider.name = "Lever_to_right"
 			static_collision.emit(collider)
+		if "Lava" in collider.name:
+			vertical_bounce()
+			take_damage(5)
 		
 			
 
@@ -107,6 +117,7 @@ func _physics_process(delta: float) -> void:
 		handle_stun(delta)
 	
 	if is_damaged:
+		animation.play("hit")
 		handle_damage(delta)
 	
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
@@ -116,14 +127,15 @@ func _physics_process(delta: float) -> void:
 		is_double_jump = true
 	
 	if not is_on_floor():
-		#pass
-		#animation.play("double_jump" if is_double_jump else "jump")
-		animation.play("jump")
+		if animation.get_current_animation() != "hit":
+			animation.play("jump")
 	elif direction != 0:
-		animation.play("walk")
+		if animation.get_current_animation() != "hit":
+			animation.play("walk")
 		is_double_jump = false
 	else:
-		animation.play("idle")
+		if animation.get_current_animation() != "hit":
+			animation.play("idle")
 		is_double_jump = false
 	
 	handle_collisions(delta)
@@ -132,7 +144,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 func clamp_to_camera(delta):
-	var camera := get_viewport().get_camera_2d()
+	
 	if camera == null:
 		return
 
@@ -147,7 +159,7 @@ func clamp_to_camera(delta):
 		if max_cam_x_position > camera.limit_right:
 			max_cam_x_position = camera.limit_right
 	
-	if max_cam_x_position - global_position.x >= viewport_size.x - camera_offset: 
+	if  global_position.x - camera_offset <= camera.limit_left: 
 		horizontal_bounce(false)
 
 	elif max_cam_x_position - global_position.x <= 0 + camera_offset:
@@ -171,7 +183,7 @@ func handle_damage(delta):
 func horizontal_bounce(short_bounce: bool):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	velocity.x = -direction * SPEED
-	sprite.flip_h = !sprite.flip_h
+	#sprite.flip_h = !sprite.flip_h
 	if short_bounce:
 		stun_delay = STUN_TIME / 2
 	else:
@@ -211,10 +223,12 @@ func handle_hp():
 	
 func _on_hp_change(diff: int):
 	player_hp = min(player_hp + diff, MAX_PLAYER_HP)
+	if diff < 0:
+		animation.play("hit")
 
 func take_damage(damage: int):
 	if !is_damaged:
-		#animation.play("hit")
 		player_hp -= damage
 		is_damaged = true
 		damage_delay = DAMAGE_STUN
+		animation.play("hit")

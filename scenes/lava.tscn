@@ -1,0 +1,232 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6g7wo0xe4wop"]
+
+[ext_resource type="Texture2D" uid="uid://cu0jp07dmo62e" path="res://assets/Sprites/Tiles/Default/lava_top.png" id="1_a5s42"]
+[ext_resource type="Texture2D" uid="uid://cst4328otgyk8" path="res://assets/Sprites/Tiles/Default/lava.png" id="2_dw3wf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw3wf"]
+size = Vector2(704, 309)
+
+[node name="Lava" type="StaticBody2D"]
+
+[node name="LavaTop10" type="Sprite2D" parent="."]
+position = Vector2(256, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop11" type="Sprite2D" parent="."]
+position = Vector2(320, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop8" type="Sprite2D" parent="."]
+position = Vector2(-320, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop9" type="Sprite2D" parent="."]
+position = Vector2(-256, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop7" type="Sprite2D" parent="."]
+position = Vector2(-192, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop6" type="Sprite2D" parent="."]
+position = Vector2(-128, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop5" type="Sprite2D" parent="."]
+position = Vector2(192, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop4" type="Sprite2D" parent="."]
+position = Vector2(128, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop3" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop2" type="Sprite2D" parent="."]
+texture = ExtResource("1_a5s42")
+
+[node name="LavaTop" type="Sprite2D" parent="."]
+position = Vector2(-64, 0)
+texture = ExtResource("1_a5s42")
+
+[node name="Lava2" type="Sprite2D" parent="."]
+position = Vector2(-256, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava" type="Sprite2D" parent="."]
+position = Vector2(-320, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava3" type="Sprite2D" parent="."]
+position = Vector2(-128, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava4" type="Sprite2D" parent="."]
+position = Vector2(-192, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava5" type="Sprite2D" parent="."]
+position = Vector2(0, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava6" type="Sprite2D" parent="."]
+position = Vector2(-64, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava7" type="Sprite2D" parent="."]
+position = Vector2(128, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava8" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava9" type="Sprite2D" parent="."]
+position = Vector2(192, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava10" type="Sprite2D" parent="."]
+position = Vector2(320, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava11" type="Sprite2D" parent="."]
+position = Vector2(256, 64)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava12" type="Sprite2D" parent="."]
+position = Vector2(-256, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava13" type="Sprite2D" parent="."]
+position = Vector2(-320, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava14" type="Sprite2D" parent="."]
+position = Vector2(-128, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava15" type="Sprite2D" parent="."]
+position = Vector2(-192, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava16" type="Sprite2D" parent="."]
+position = Vector2(0, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava17" type="Sprite2D" parent="."]
+position = Vector2(-64, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava18" type="Sprite2D" parent="."]
+position = Vector2(128, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava19" type="Sprite2D" parent="."]
+position = Vector2(64, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava20" type="Sprite2D" parent="."]
+position = Vector2(192, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava21" type="Sprite2D" parent="."]
+position = Vector2(320, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava22" type="Sprite2D" parent="."]
+position = Vector2(256, 128)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava23" type="Sprite2D" parent="."]
+position = Vector2(-256, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava24" type="Sprite2D" parent="."]
+position = Vector2(-320, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava25" type="Sprite2D" parent="."]
+position = Vector2(-128, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava26" type="Sprite2D" parent="."]
+position = Vector2(-192, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava27" type="Sprite2D" parent="."]
+position = Vector2(0, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava28" type="Sprite2D" parent="."]
+position = Vector2(-64, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava29" type="Sprite2D" parent="."]
+position = Vector2(128, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava30" type="Sprite2D" parent="."]
+position = Vector2(64, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava31" type="Sprite2D" parent="."]
+position = Vector2(192, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava32" type="Sprite2D" parent="."]
+position = Vector2(320, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava33" type="Sprite2D" parent="."]
+position = Vector2(256, 192)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava34" type="Sprite2D" parent="."]
+position = Vector2(-256, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava35" type="Sprite2D" parent="."]
+position = Vector2(-320, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava36" type="Sprite2D" parent="."]
+position = Vector2(-128, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava37" type="Sprite2D" parent="."]
+position = Vector2(-192, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava38" type="Sprite2D" parent="."]
+position = Vector2(0, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava39" type="Sprite2D" parent="."]
+position = Vector2(-64, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava40" type="Sprite2D" parent="."]
+position = Vector2(128, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava41" type="Sprite2D" parent="."]
+position = Vector2(64, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava42" type="Sprite2D" parent="."]
+position = Vector2(192, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava43" type="Sprite2D" parent="."]
+position = Vector2(320, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="Lava44" type="Sprite2D" parent="."]
+position = Vector2(256, 256)
+texture = ExtResource("2_dw3wf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 135.5)
+shape = SubResource("RectangleShape2D_dw3wf")

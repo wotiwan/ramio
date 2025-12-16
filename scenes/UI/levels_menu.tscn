@@ -150,10 +150,10 @@ text = "3"
 
 [node name="Back_Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 952.0
-offset_top = 608.0
-offset_right = 1101.0
-offset_bottom = 677.0
+offset_left = 1112.0
+offset_top = 696.0
+offset_right = 1261.0
+offset_bottom = 765.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
