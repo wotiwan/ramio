@@ -36,7 +36,7 @@ var is_double_jump: bool = false
 
 func _ready() -> void:
 	get_parent().connect("change_player_hp", _on_hp_change)
-	if get_tree().current_scene.name == "second_scene":
+	if get_tree().current_scene.name == "third_scene":
 		cam_limit_right = 6800
 	camera.limit_right = cam_limit_right
 	

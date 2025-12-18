@@ -1,20 +1,110 @@
-[gd_scene load_steps=4 format=3 uid="uid://jr7jhumwnp8x"]
+[gd_scene load_steps=7 format=3 uid="uid://jr7jhumwnp8x"]
 
 [ext_resource type="Script" uid="uid://bc5mffiorwocx" path="res://scripts/barnacle_enemy.gd" id="1_82pgy"]
 [ext_resource type="Texture2D" uid="uid://k5ywxsfdl6sk" path="res://assets/Sprites/Enemies/Default/barnacle_attack_a.png" id="1_hrdp4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_82pgy"]
 radius = 18.0
-height = 58.0
+height = 56.0
+
+[sub_resource type="Animation" id="Animation_82pgy"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("barnacle_sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("barnacle_sprite:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.04363323]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("barnacle_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -3.1)]
+}
+
+[sub_resource type="Animation" id="Animation_eqi0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("barnacle_sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("barnacle_sprite:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.04363323]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("barnacle_sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eqi0q"]
+_data = {
+&"RESET": SubResource("Animation_eqi0q"),
+&"idle": SubResource("Animation_82pgy")
+}
 
 [node name="barnacle_enemy" type="CharacterBody2D"]
 script = ExtResource("1_82pgy")
 
 [node name="barnacle_sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3.1)
+skew = 0.04363323
 texture = ExtResource("1_hrdp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_82pgy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eqi0q")
+}

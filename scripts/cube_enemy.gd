@@ -30,8 +30,8 @@ func _physics_process(delta):
 	
 	# Гравитация
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
+		velocity += get_gravity() * delta	
+
 	if cur_state == state.ANGRY:
 		handle_angry()
 	elif cur_state == state.IDLE:
@@ -90,7 +90,8 @@ func handle_idle():
 	flight_sprite.visible = false
 	idle_sprite.visible = true
 	angry_sprite.visible = false
-	velocity = Vector2(0, 0)
+	if is_on_floor():
+		velocity = Vector2(0, 0)
 
 func handle_flight():
 	flight_sprite.visible = true

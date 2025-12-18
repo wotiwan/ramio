@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func handle_idle():
 	pass
-	#animation.play("idle")
+	animation.play("idle")
 
 func handle_pressed():
 	print("Pressed!!")
@@ -37,14 +37,15 @@ func handle_collisions(delta: float):
 			set_state(State.COMPRESSED)
 
 func _physics_process(delta: float) -> void:
+	
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+	
 	match current_state:
 		State.IDLE:
 			handle_idle()
 		State.COMPRESSED:
 			handle_pressed()
-	
-	if not is_on_floor():
-		velocity.y += GRAVITY * delta
 	
 	handle_collisions(delta)
 	move_and_slide()

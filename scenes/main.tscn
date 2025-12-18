@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bwsl1y60rs12" path="res://scenes/slime_enemy.tscn" id="19_0ld40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
-size = Vector2(30, 768)
+size = Vector2(39, 768)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_muem4"]
 radius = 98.95454
@@ -223,7 +223,7 @@ texture = ExtResource("2_jyhfs")
 position = Vector2(100, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Static/LeftWall"]
-position = Vector2(-724, 128)
+position = Vector2(-919.5, 120)
 shape = SubResource("RectangleShape2D_ya4ey")
 
 [node name="BackgroundSolidSky7" type="Sprite2D" parent="Background"]
