@@ -1178,7 +1178,7 @@ position = Vector2(830, -147)
 position = Vector2(894, -147)
 
 [node name="KeyRed" parent="Static" instance=ExtResource("13_h6x66")]
-position = Vector2(739, -91)
+position = Vector2(832, -193)
 
 [node name="ZamokRed" parent="Static" instance=ExtResource("14_0bc0m")]
 position = Vector2(864, 727)
@@ -1198,7 +1198,7 @@ position = Vector2(128, 280)
 position = Vector2(256, 280)
 
 [node name="KeyRed2" parent="Static" instance=ExtResource("13_h6x66")]
-position = Vector2(832, -104)
+position = Vector2(833, -193)
 
 [node name="Grass8" parent="Static" instance=ExtResource("15_wx7uu")]
 position = Vector2(920, 162)
@@ -1219,7 +1219,7 @@ position = Vector2(8, -40)
 shape = SubResource("CircleShape2D_dp3eg")
 
 [node name="heart" parent="Static" instance=ExtResource("19_68ppd")]
-position = Vector2(977, -106)
+position = Vector2(895, -190)
 
 [node name="LeverLeft" parent="Static" instance=ExtResource("20_sgwaf")]
 position = Vector2(256, 216)

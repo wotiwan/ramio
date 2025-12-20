@@ -6510,7 +6510,7 @@ visible = false
 
 [node name="WinMenu" parent="CanvasLayer" instance=ExtResource("9_b2t02")]
 visible = false
-next_level_scene = "res://scenes/third_scene.tscn"
+next_level_scene = "res://scenes/main.tscn"
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("10_8xnvn")]
 visible = false
