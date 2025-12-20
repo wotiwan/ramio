@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const MICRO_VELOCITY := 0.01
+
 signal win_signal()
 signal loose_signal()
 
@@ -140,9 +142,14 @@ func _physics_process(delta: float) -> void:
 			animation.play("idle")
 		is_double_jump = false
 	
+	apply_micro_movement()
 	handle_collisions(delta)
 	move_and_slide()
 	
+func apply_micro_movement():
+	if velocity.x == 0 and velocity.y == 0:
+		velocity.x = MICRO_VELOCITY
+
 	
 	
 func clamp_to_camera(delta):
